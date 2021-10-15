@@ -2,6 +2,7 @@
 https://www.buzzwordbingogame.com/ from a YAML configuration file.
 """
 
+import math
 import sys
 from urllib.parse import urlencode
 import click
@@ -13,6 +14,13 @@ class Bingo(yaml.YAMLObject):
     URL.
     """
 
+    # In a standard BINGO board, numbers 1 to 75 can be picked. However, the numbers are not
+    # arranged randomly on the board; they are binned into five groups of 15 each. The "N" bin is
+    # special because it contains the free square, leaving 24 possible numbers to be placed on the
+    # board.
+    standard_combinations = math.comb(15, 5) * 4 + math.comb(15, 4)
+    standard_permutations = math.perm(15, 5) * 4 + math.perm(15, 4)
+    standard_pick = 24/75
     yaml_loader = yaml.SafeLoader
     yaml_tag = '!Bingo'
 
@@ -27,6 +35,22 @@ class Bingo(yaml.YAMLObject):
             f'{self.__class__.__name__}(title={self.title},free_square={self.free_square}'
             f'exclamation={self.exclamation},terms={self.terms})'
         )
+
+    def combinations(self) -> int:
+        """Returns the number term combinations for this board."""
+        return math.comb(self.size(), 24)
+
+    def permutations(self) -> int:
+        """Returns the number of permutations for this board."""
+        return math.perm(self.size(), 24)
+
+    def pick_chance(self) -> float:
+        """Returns the chance that an item on the board is picked."""
+        return min(1, 24 / self.size())
+
+    def size(self) -> int:
+        """Returns the number of terms in the board."""
+        return len(self.terms)
 
     def to_url(self) -> str:
         """Returns the URL for bingo board"""
@@ -54,8 +78,14 @@ def bingo(file):
     """Generates a bingo board URL from a provided YAML configuration file"""
     print('Generating bingo board from ' + file)
     config = parse_file(file)
-    print(config)
     board = Bingo(config.title, config.free_square, config.exclamation, config.terms)
+    print(f'Number of terms: {board.size()}')
+    print(f'Number of board permutations: {board.permutations()} ' +
+          f'(standard {Bingo.standard_permutations})')
+    print(f'Number of board combinations: {board.combinations()} ' +
+          f'(standard {Bingo.standard_combinations})')
+    print(f'Chance of getting picked: {board.pick_chance()} ' +
+          f'(standard {Bingo.standard_pick})')
     print('Your bingo board url:')
     print(board.to_url())
 
