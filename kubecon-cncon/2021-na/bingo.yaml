@@ -1,0 +1,78 @@
+!Bingo
+title: KubeCon + CloudNativeCon
+free_square: HONK
+exclamation: HONK!
+terms:
+- Kubernetes
+- Supply chain
+- SLSA
+- CI/CD
+- Hybrid cloud
+- Prometheus
+- SBOM
+- Multi-cluster
+- eBPF
+- Cloud native
+- DNS
+- Service Mesh
+- Edge
+- Ecosystem
+- Policy
+- Honk
+- SIG
+- Attestation
+- CVE
+- GitOps
+- Ecosystem
+- Telco
+- CNF
+- kubectl
+- Serverless
+- Rollout
+- Deployment
+- CRD
+- End user
+- containerd
+- CoreDNS
+- envoy
+- etcd
+- fluentd
+- Harbor
+- Helm
+- Jaeger (tracing)
+- Linkerd
+- OPA
+- Rook
+- TUF
+- TiKV
+- Vitess
+- Argo
+- Buildpacks
+- cloudevents
+- CNI
+- Contour
+- cortex
+- cri-o
+- Crossplane
+- Dragonfly
+- Emissary Ingress
+- falco
+- flagger
+- flux
+- gRPC
+- KEDA
+- KubeEdge
+- Longhorn
+- NATS
+- Notary
+- OpenTelemetry
+- Operator Framework
+- spiffe
+- SPIRE
+- Thanos
+- YAML
+- WebAssembly
+- cosign
+- Single pain of glass
+- Contributor
+- Maintainer
