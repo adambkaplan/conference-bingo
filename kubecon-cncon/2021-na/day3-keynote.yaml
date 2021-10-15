@@ -3,3 +3,33 @@ title: KubeCon NA 2021 Day 3
 free_square: HONK
 exclamation: Honk!
 terms:
+- ".+Ops"
+- Alert
+- Automation
+- Burnout
+- CI/CD
+- Cloud Native
+- Code of Conduct
+- Community
+- Contributor
+- CVE
+- Developers
+- Ecosystem
+- Edge
+- End User
+- HTML Decoding
+- Machine Learning
+- Maintainer
+- Monitoring
+- Observability
+- Operator
+- Policy
+- SBOM
+- Security
+- SIG
+- SLSA
+- Supply Chain
+- TAG
+- Telemetry
+- Transparency
+- Vulnerability
