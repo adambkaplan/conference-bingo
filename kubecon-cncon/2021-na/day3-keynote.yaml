@@ -9,6 +9,7 @@ terms:
 - Burnout
 - CI/CD
 - Cloud Native
+- Code of Conduct
 - Community
 - Contributor
 - CVE
@@ -24,8 +25,11 @@ terms:
 - Operator
 - Policy
 - SBOM
+- Security
 - SIG
 - SLSA
 - Supply Chain
+- TAG
+- Telemetry
 - Transparency
 - Vulnerability
